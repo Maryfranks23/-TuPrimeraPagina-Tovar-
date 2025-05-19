@@ -1,0 +1,13 @@
+{% extends 'blog_recargas/base.html' %}
+
+{% block title %}{{ titulo }}{% endblock %}
+{% block page_header %}{{ titulo }}{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Empresa</button>
+    </form>
+    <p><a href="{% url 'crear_cliente' %}">Ir a Crear Cliente</a> | <a href="{% url 'crear_recarga' %}">Ir a Crear Recarga</a> | <a href="{% url 'buscar_recarga' %}">Buscar Recarga</a></p>
+{% endblock %}

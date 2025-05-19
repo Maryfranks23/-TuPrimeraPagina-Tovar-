@@ -1,0 +1,30 @@
+{% extends 'blog_recargas/base.html' %}
+
+{% block title %}{{ titulo }}{% endblock %}
+{% block page_header %}{{ titulo }}{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h2>Resultados de la búsqueda:</h2>
+        <div class="resultados">
+            {% for recarga in resultados %}
+                <div class="resultado-item">
+                    <p><strong>Monto:</strong> ${{ recarga.monto }}</p>
+                    <p><strong>Teléfono:</strong> {{ recarga.telefono }}</p>
+                    <p><strong>Empresa:</strong> {{ recarga.empresa }}</p>
+                    <p><strong>Cliente:</strong> {{ recarga.cliente }}</p>
+                    <p><strong>Fecha:</strong> {{ recarga.fecha }}</p>
+                </div>
+            {% empty %}
+                <p>No se encontraron recargas con ese número de teléfono.</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <p><a href="{% url 'crear_empresa' %}">Ir a Crear Empresa</a> | <a href="{% url 'crear_cliente' %}">Ir a Crear Cliente</a> | <a href="{% url 'crear_recarga' %}">Ir a Crear Recarga</a></p>
+{% endblock %}

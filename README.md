@@ -5,7 +5,7 @@ Esta es una sencilla web de Django para gestionar recargas de celulares.
 ## Cómo probar la aplicación:
 
 1.  Asegúrate de tener Python y Django instalados en tu entorno.
-2.  Clona este repositorio: `git clone https://github.com/Maryfranks23/TuPrimeraPagina-Tovar.git` (reemplaza `TuUsuario` con tu nombre de usuario de GitHub).
+2.  Clona este repositorio: `git clone https://github.com/Maryfranks23/TuPrimeraPagina-Tovar.git`
 3.  Navega al directorio del proyecto: `cd TuPrimeraPagina-Tovar`
 4.  Crea y activa un entorno virtual (recomendado):
     ```bash
